@@ -1,0 +1,18 @@
+var ip = '192.168.1.241';
+var mask = '255.255.255.0';
+var ipSplit = ip.split('.');
+var maskSplit = mask.split('.');
+
+/**
+* La funcion determina la dirección de red en base a una direccion ip y una mascara de red
+*
+**/
+function networkAddress(ipSplit, maskSplit){
+var netAddress = new Array;
+for(var i = 0 ;i < 4; i++){
+netAddress.push(parseInt(ipSplit[i]) & parseInt(maskSplit[i]));
+}
+return netAddress;
+};
+
+networkAddress(ipSplit, maskSplit);
